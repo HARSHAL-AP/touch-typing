@@ -1,0 +1,74 @@
+.combody{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+    background-color: rgb(215, 234, 250);
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 500;
+
+} 
+.cominput{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    height:35px;
+    font-size: 25px;
+    border: 1px solid rgb(214, 219, 214);
+    padding:10px;
+}
+.comtime{
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:right ;
+    gap: 10px
+}
+.comtime>p{
+   cursor: pointer;
+   font-weight: 600;
+}
+.comtime>h4{
+    color: rgb(0, 153, 255);
+    font-weight: 700;
+ }
+ .liveresultcon{
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.liveresultcon>div>h4{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 500;
+ }
+ .liveresultcon>div>p{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 600;
+ }
+ .restartbuton{
+    width: 100px;
+    margin: auto;
+    margin-top: 40px;
+    background-color: rgb(238, 210, 203);
+    padding: 3px;
+
+    font-size: 20px;
+    font-weight: 700;
+}

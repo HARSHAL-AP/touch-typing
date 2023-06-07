@@ -1,0 +1,13 @@
+.footer{
+    height: 50px;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer>p{
+    cursor: pointer;
+}

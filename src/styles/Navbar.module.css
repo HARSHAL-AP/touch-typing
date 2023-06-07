@@ -1,0 +1,32 @@
+.navbar {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbarcontent {
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 25px;
+    color: #ffffff;
+    animation: glow 1s infinite alternate;
+  }
+  
+  @keyframes glow {
+    to {
+      text-shadow: 0 0 10px #ffffff;
+    }
+  }
+  
+  .timeselecter {
+    height: 30px;
+    width: 150px;
+  }

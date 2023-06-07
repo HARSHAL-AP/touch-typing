@@ -1,0 +1,23 @@
+.home {
+  width: 60%;
+  margin: auto;
+  padding-top: 30px;
+  height: 85vh;
+  
+}
+.typingcontainer {
+  width: 50%;
+  margin:25px auto;
+  border-radius: 5px;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  font: 800 28px 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #fff;
+}
+.typingcontener>h2{
+  font-size:32px;
+  font-weight: 700;
+  color: #fff;
+}
