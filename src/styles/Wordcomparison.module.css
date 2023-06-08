@@ -4,15 +4,20 @@
     display: flex;
     align-items: center;
     justify-content: left;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
-    font-size: 18px;
+    gap: 10px;
+    font-size: 20px;
     background-color: rgb(215, 234, 250);
     padding: 15px;
     border-radius: 5px;
     font-weight: 500;
+    text-align: center;
 
 } 
+.combody>span{
+text-align: center;
+}
 .cominput{
     width: 90%;
     margin: auto;
@@ -72,3 +77,56 @@
     font-size: 20px;
     font-weight: 700;
 }
+.modal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.589);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modalcontent{
+ width: 50%;
+ height: 300px;
+ background-color: aliceblue;
+ border-radius: 5px;
+}
+.resulcon{
+ width: 80%;
+ height: 150px;
+ margin: auto;
+ display: flex;
+ align-items: center;
+ justify-content:center;
+ gap: 30px;
+
+}
+.resulcon>div{
+    width:150px;
+    height: 150px;
+    border: 5px solid rgb(0, 162, 255);
+    border-radius: 50%;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+.resulcon>div>h4{
+   font-size: 20px;
+}
+.resulcon>div>p{
+    font-size: 35px;
+    font-weight: 700;
+    color: rgb(68, 0, 255);
+ }
+ .retaketest{
+    width: 50px;
+    height:50px;
+    position: absolute;
+    top: 2px;
+    left: 95%;
+    
+    margin-top: 55px;
+ }

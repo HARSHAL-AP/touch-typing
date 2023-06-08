@@ -10,10 +10,12 @@ const Wordcomparison = () => {
   const [correctWordsCount, setCorrectWordsCount] = useState(0);
   const [incorrectWordsCount, setIncorrectWordsCount] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
-  const [duration, setDuration] = useState(1); // Default duration of 1 minute
+  const [duration, setDuration] = useState(1); 
   const [timer, setTimer] = useState(duration * 60);
   const [timerActive, setTimerActive] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [wordPerMinute, setWordPerMinute] = useState(0); 
   const wordsArray = useSelector((store) => store.data);
 
   useEffect(() => {
@@ -28,6 +30,7 @@ const Wordcomparison = () => {
     if (timer === 0) {
       setTimerActive(false);
       setInputText("");
+      setIsOpen(true);
     }
 
     return () => clearInterval(interval);
@@ -38,8 +41,8 @@ const Wordcomparison = () => {
     setInputText(text);
     setTimerActive(true);
     countWords(text);
-    if (text.split(" ").length >= 40) {
-      setStartIndex(startIndex + 40);
+    if (text.split(" ").length >= 60) {
+      setStartIndex(startIndex + 60);
     }
   };
 
@@ -75,9 +78,26 @@ const Wordcomparison = () => {
     const accuracyPercentage =
       totalWordsCount > 0 ? (correctCount / totalWordsCount) * 100 : 0;
     setAccuracy(accuracyPercentage.toFixed(2));
+
+    const wordsPerMinute = calculateWordsPerMinute(); 
+    setWordPerMinute(wordsPerMinute); 
   };
 
-  const expectedWords = wordsArray.slice(startIndex, startIndex + 40);
+  const calculateWordsPerMinute = () => {
+    const elapsedMinutes = (duration * 60 - timer) / 60; 
+    const wordsPerMinute = correctWordsCount / elapsedMinutes; 
+    return wordsPerMinute.toFixed(0); 
+  };
+
+  const expectedWords = wordsArray.slice(startIndex, startIndex + 60);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div>
@@ -123,13 +143,42 @@ const Wordcomparison = () => {
         </div>
         <div>
           <h4>Correct words:</h4>
-          <p> {correctWordsCount}</p>
+          <p>{correctWordsCount}</p>
         </div>
         <div>
-          <h4>Accuracy: </h4>
+          <h4>Accuracy:</h4>
           <p>{accuracy}%</p>
         </div>
+        <div>
+          <h4>WPM:</h4>
+          <p>{wordPerMinute}</p>
+        </div>
       </div>
+      {isOpen && (
+        <div className={style.modal}>
+          <div className={style.modalcontent}>
+            <h2>Your Test Score..</h2>
+            <div className={style.resulcon}>
+              <div>
+                <h4>Correct words:</h4>
+                <p>{correctWordsCount}</p>
+              </div>
+              <div>
+                <h4>WPM:</h4>
+                <p>{wordPerMinute}</p> 
+              </div>
+              <div>
+                <h4>Accuracy:</h4>
+                <p>{accuracy}%</p>
+              </div>
+            </div>
+
+            <div className={style.retaketest}>
+              <button onClick={closeModal}>X</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

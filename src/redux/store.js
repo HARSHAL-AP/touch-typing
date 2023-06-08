@@ -11,7 +11,7 @@ const initialState = {
 const FETCH_DATA = 'FETCH_DATA';
 const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
-// Define actions
+
 
 const fetchData = (payload) => ({
     type: FETCH_DATA,
